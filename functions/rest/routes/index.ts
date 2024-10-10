@@ -18,6 +18,7 @@ const auth = async (request : Request, env : Env) => {
     }
     // with kv equal
     const authKey = env.PICX_AUTH_TOKEN || await env.XK?.get('PICX_AUTH_TOKEN')
+    
     if (!authKey) {
         return json(Fail("system not auth setting"))
     }
