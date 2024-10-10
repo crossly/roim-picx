@@ -112,7 +112,7 @@ router.post('/upload',  auth, async (req: Request, env : Env) => {
             urls.push({
                 key: object.key,
                 size: object.size,
-                url: `${env.BASE_URL}/rest/${object.key}`,
+                url: `${env.BASE_URL}/${object.key}`,
                 filename: item.name
             })
         }
