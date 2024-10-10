@@ -18,7 +18,7 @@ const auth = async (request : Request, env : Env) => {
     }
     // with kv equal
     const authKey = env.PICX_AUTH_TOKEN || await env.XK?.get('PICX_AUTH_TOKEN')
-    
+
     if (!authKey) {
         return json(Fail("system not auth setting"))
     }
@@ -105,7 +105,7 @@ router.post('/upload',  auth, async (req: Request, env : Env) => {
         const header = new Headers()
         header.set("content-type", fileType)
         header.set("content-length", `${item.size}`)
-        const object = await env.PICX.put(filename, item.stream(), {
+        const object = await env.PICX.put('rest/'+filename, item.stream(), {
             httpMetadata: header,
         }) as R2Object
         if (object || object.key) {
