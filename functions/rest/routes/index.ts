@@ -115,6 +115,7 @@ router.post('/upload',  auth, async (req: Request, env : Env) => {
                 key: object.key,
                 size: object.size,
                 url: `https://000.056650.xyz/${object.key}`,
+                resized: `https://r1.rnrnr.com/${object.key}`,
                 filename: item.name
             })
         }

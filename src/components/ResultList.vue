@@ -23,6 +23,11 @@
         {{ viewLinks() }}
       </div>
     </el-tab-pane>
+    <el-tab-pane label="Link" name="sixth">
+      <div class="text-sm text-gray-600 p-2 bg-gray-100 max-w-full overflow-auto whitespace-pre" @click="copyLink">
+        {{ viewSizedLinks() }}
+      </div>
+    </el-tab-pane>
   </el-tabs>
 </template>
 
@@ -53,6 +58,15 @@ const viewLinks = () => {
   for(let i = 0; i < length; i++) {
     const it = props.imageList[i]
     text += `${it.url}\n`
+  }
+  return text
+}
+const viewSizedLinks = () => {
+  let text = ''
+  const length = props.imageList.length
+  for(let i = 0; i < length; i++) {
+    const it = props.imageList[i]
+    text += `${it.resized}\n`
   }
   return text
 }
