@@ -23,7 +23,7 @@
         {{ viewLinks() }}
       </div>
     </el-tab-pane>
-    <el-tab-pane label="Link" name="sixth">
+    <el-tab-pane label="Optimized Link" name="sixth">
       <div class="text-sm text-gray-600 p-2 bg-gray-100 max-w-full overflow-auto whitespace-pre" @click="copyLink">
         {{ viewSizedLinks() }}
       </div>
@@ -49,6 +49,7 @@ const htmlLinks = () => {
   for(let i = 0; i < length; i++) {
     const it = props.imageList[i]
     text += `<a href="${it.url}" target="_blank"><img src="${it.url}"></a>\n`
+    text += `<a href="${it.resized}" target="_blank"><img src="${it.resized}"></a>\n`
   }
   return text
 }

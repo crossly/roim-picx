@@ -42,6 +42,12 @@
               <input id="LINK" :value="it.url" name="LINK" class="cursor-pointer focus:none border border-gray-300 flex-1 block w-full rounded-md px-2 py-1" placeholder="link" @click="copyLink" readonly />
             </div>
           </div>
+          <div class="w-full mb-2">
+            <label for="Optimized" class="block text-sm font-medium text-gray-700"> Optimized LINK </label>
+            <div class="mt-1">
+              <input id="Optimized" :value="it.resized" name="Optimized" class="cursor-pointer focus:none border border-gray-300 flex-1 block w-full rounded-md px-2 py-1" placeholder="link" @click="copyLink" readonly />
+            </div>
+          </div>
         </div>
       </div>
     </div>
