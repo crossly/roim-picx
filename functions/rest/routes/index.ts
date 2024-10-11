@@ -31,11 +31,13 @@ const auth = async (request : Request, env : Env) => {
 // 检测token是否有效
 router.post('/checkToken', async (req : Request, env : Env) => {
     const data = await req.json() as AuthToken
+    console.log(`Received token: ${data.token}`);
     const token = data.token
     if (!token) {
         return json(Ok(false))
     }
     const authKey = env.PICX_AUTH_TOKEN || await env.XK?.get('PICX_AUTH_TOKEN')
+    console.log(`Auth Key: ${authKey}`)
     if (!authKey) {
         return json(Ok(false))
     }
